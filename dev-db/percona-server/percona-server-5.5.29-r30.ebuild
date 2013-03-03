@@ -5,7 +5,7 @@
 EAPI="4"
 
 MY_PV="${PV/_r*}"
-PERCONA_RELEASE="28.0"
+PERCONA_RELEASE="30.0"
 PERCONA_PV="Percona-Server-$MY_PV-rel$PERCONA_RELEASE"
 # keep this in sync with percona
 PERCONA_MYSQL_VERSION_EXTRA="55"
