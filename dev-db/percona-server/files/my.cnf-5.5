@@ -1,5 +1,5 @@
 # @GENTOO_PORTAGE_EPREFIX@/etc/mysql/my.cnf: The global mysql configuration file.
-# $Header: /var/cvsroot/gentoo-x86/dev-db/mysql/files/my.cnf-5.1,v 1.4 2013/01/20 02:40:02 robbat2 Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-db/mysql/files/my.cnf-5.5,v 1.2 2013/01/20 02:40:02 robbat2 Exp $
 
 # The following options will be passed to all MySQL clients
 [client]
@@ -60,7 +60,9 @@ net_buffer_length 			= 8K
 read_buffer_size 			= 256K
 read_rnd_buffer_size 		= 512K
 myisam_sort_buffer_size 	= 8M
-language 					= @GENTOO_PORTAGE_EPREFIX@/usr/share/mysql/english
+lc_messages_dir			= @GENTOO_PORTAGE_EPREFIX@/usr/share/mysql
+#Set this to your desired error message language
+lc_messages			= en_US
 
 # security:
 # using "localhost" in connects uses sockets by default
@@ -121,6 +123,10 @@ innodb_log_files_in_group=2
 innodb_flush_log_at_trx_commit = 1
 innodb_lock_wait_timeout = 50
 innodb_file_per_table
+
+# Uncomment this to get FEDERATED engine support
+#plugin-load=federated=ha_federated.so
+loose-federated
 
 [mysqldump]
 quick
